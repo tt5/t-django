@@ -1,0 +1,12 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+<p>Your guess was {{ guess }}</p>
+<p> {{ zap|safe }} </p>
+<ul>
+    {% for x in numbers %}
+    <li>{{ x }}</li>
+    {% endfor %}
+</ul>
+<p><a href="{% url 'polls:remain2' %}">link</a></p>
+{% endblock %}

@@ -1,2 +1,6 @@
 db.sqlite3
 **/__pycache__/
+pyvenv.cfg
+lib/
+lib64
+bin/

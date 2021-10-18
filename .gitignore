@@ -4,3 +4,7 @@ pyvenv.cfg
 lib/
 lib64
 bin/
+node_modules/
+.env
+var/
+package-lock.json

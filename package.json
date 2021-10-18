@@ -1,0 +1,27 @@
+{
+  "name": "pythonanywhere-django",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tt5/t-django.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tt5/t-django/issues"
+  },
+  "homepage": "https://github.com/tt5/t-django#readme",
+  "dependencies": {
+    "alpinejs": "^3.4.2",
+    "vite": "^2.6.7"
+  }
+}

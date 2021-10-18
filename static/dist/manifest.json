@@ -1,0 +1,16 @@
+{
+  "js/main.js": {
+    "file": "main.5c425fc4.js",
+    "src": "js/main.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-16ac4253.js"
+    ],
+    "css": [
+      "main.4618bfa2.css"
+    ]
+  },
+  "_vendor-16ac4253.js": {
+    "file": "vendor-16ac4253.js"
+  }
+}

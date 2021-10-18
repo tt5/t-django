@@ -1,8 +1,12 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <h1>Home</h1>
 <p>/polls</p>
+
+<div x-data="{ open: false }">
+    <button @click="open = !open">Toggle show</button>
+
+    <span x-show="open"> Content... </span>
+</div>
 
 {% endblock content %}

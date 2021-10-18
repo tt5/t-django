@@ -17,7 +17,10 @@ from pathlib import Path
 env = environ.Env()
 environ.Env.read_env()
 SECRET_KEY = env("SECRET_KEY", default="unsave-secret-key")
+#pythonanywhere
 DB_KEY = env("DB_KEY")
+#local:
+#DB_KEY = env("DB_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_vite',
 ]
 
 MIDDLEWARE = [
@@ -82,21 +86,23 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Usernamea$user123',
-        'USER': 'Usernamea',
-        'PASSWORD': DB_KEY,
-        'HOST': 'Usernamea.mysql.pythonanywhere-services.com',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# settings for pythonanywhere:
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'Usernamea$user123',
+#        'USER': 'Usernamea',
+#        'PASSWORD': DB_KEY,
+#        'HOST': 'Usernamea.mysql.pythonanywhere-services.com',
+#    }
+#}
 
 
 # Password validation
@@ -136,8 +142,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / "static"
+DJANGO_VITE_DEV_MODE = True
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
+#pythonanywhere
 STATIC_ROOT = os.path.join(BASE_DIR, '/var/www/static')
+#local
+#STATIC_ROOT = os.path.join(BASE_DIR, 'var/www/static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
